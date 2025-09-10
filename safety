@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Charms — Normes liées à la sécurité des enfants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fdfdfd;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    .last-update {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    hr {
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Charms — Normes liées à la sécurité des enfants / Safety Standards</h1>
+  <p class="last-update">
+    Dernière mise à jour : 9 septembre 2025<br>
+    Contact sécurité / Safety contact : <strong>christy.yesso@gmail.com</strong>
+  </p>
+
+  <hr>
+
+  <h2>FR 🇫🇷 — Normes de sécurité</h2>
+  <h3>1) Public visé et exigence d’âge</h3>
+  <p>Charms est strictement réservé aux <strong>utilisateurs de 18 ans et plus</strong>. Nous interdisons la création de comptes par des mineurs et supprimons tout compte suspecté d’être détenu par un mineur.</p>
+
+  <h3>2) Interdiction absolue de contenus et comportements portant atteinte aux enfants</h3>
+  <p>Sont formellement <strong>interdits</strong> :</p>
+  <ul>
+    <li>Contenus sexuellement explicites impliquant des mineurs, y compris <strong>CSAM</strong> (Child Sexual Abuse Material).</li>
+    <li>Sollicitations, grooming, sextorsion, tentatives de contact sexuel avec un mineur.</li>
+    <li>Toute apologie, partage, stockage ou recherche de contenus d’abus sur mineurs.</li>
+  </ul>
+  <p><strong>Tolérance zéro</strong> : suspension immédiate des comptes concernés, conservation des preuves et signalement aux autorités.</p>
+
+  <h3>3) Outils de signalement dans l’appli</h3>
+  <p>Les utilisateurs peuvent signaler un <em>profil</em> via le menu «Discussion » → <strong>Signaler</strong>.</p>
+
+  <h3>4) Processus de modération</h3>
+  <ul>
+    <li>Analyse automatique + revue humaine.</li>
+    <li>Mesures : avertissement, restriction, suspension ou bannissement.</li>
+    <li>Escalade aux autorités lorsque requis.</li>
+  </ul>
+
+  <h3>5) Coopération avec les autorités</h3>
+  <p>Charms collabore avec les autorités locales, régionales et nationales et répond aux demandes légales conformément aux lois applicables.</p>
+
+  <h3>6) Prévention &amp; éducation</h3>
+  <p>Conseils de sécurité dans l’app, rappels contextuels lors de l’envoi de médias et dans les conversations.</p>
+
+  <h3>7) Protection des données des signalements</h3>
+  <p>Les signalements sont conservés de manière sécurisée, accessibles uniquement au personnel autorisé, et utilisés exclusivement pour des raisons de sécurité et légales.</p>
+
+  <h3>8) Comment nous contacter</h3>
+  <p>Email : <strong>christy.yesso@gmail.com<br>
+  
+  <h3>9) Ressources utiles</h3>
+  <ul>
+    <li><a href="https://www.internet-signalement.gouv.fr/">Pharos (France)</a></li>
+    <li><a href="https://3018.fr/">e-Enfance / 3018</a></li>
+    <li><a href="https://inhope.org/">INHOPE</a></li>
+  </ul>
+
+  <h3>10) Mise à jour des normes</h3>
+  <p>Nous pouvons mettre à jour ces normes. Voir la date ci-dessus.</p>
+
+  <hr>
+
+  <h2>EN 🇬🇧 — Child Safety Standards</h2>
+  <h3>1) Audience &amp; Age Requirement</h3>
+  <p>Charms is <strong>18+ only</strong>. Accounts suspected to be owned by minors are removed.</p>
+
+  <h3>2) Zero-Tolerance Prohibitions</h3>
+  <ul>
+    <li><strong>CSAM</strong> (Child Sexual Abuse Material) in any form.</li>
+    <li>Grooming, solicitation of minors, sexual contact attempts.</li>
+    <li>Sharing, storage, or promotion of child exploitation content.</li>
+  </ul>
+
+  <h3>3) In-App Reporting</h3>
+  <p>Profiles can be reported via “Discission” → <strong>Report</strong>.</p>
+
+  <h3>4) Moderation Workflow</h3>
+  <p>Automated + human review → warning, suspension, or permanent ban, escalation to authorities.</p>
+
+  <h3>5) Cooperation with Authorities</h3>
+  <p>We cooperate with competent authorities and comply with applicable laws.</p>
+
+  <h3>6) Education &amp; Prevention</h3>
+  <p>Safety tips, reminders during chat and media sharing.</p>
+
+  <h3>7) Reporting Data Protection</h3>
+  <p>Reports are stored securely, accessed only by authorized staff, and shared only under lawful basis.</p>
+
+  <h3>8) Contact</h3>
+  <p>Email: <strong>security@charms.app</strong><br>
+  In-app: <em>Profile → Help &amp; Safety → Contact the team</em></p>
+
+  <h3>9) Useful Resources</h3>
+  <ul>
+    <li><a href="https://inhope.org/">INHOPE network</a></li>
+    <li>Local hotlines depending on user’s country</li>
+  </ul>
+
+  <h3>10) Updates</h3>
+  <p>See the “Last updated” date for current version.</p>
+
+  <hr>
+
+  <p><strong>Mentions légales / Legal Note :</strong> Charms applique une politique de <strong>tolérance zéro</strong> pour toute exploitation sexuelle des mineurs.</p>
+</body>
+</html>
