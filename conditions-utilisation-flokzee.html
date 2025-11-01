@@ -32,44 +32,57 @@
     a { color: var(--accent); }
     footer { margin-top: 24px; color: var(--muted); font-size: 14px; }
     .badge { display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#3730a3; font-size:12px; }
+    .lang-select {
+      float: right;
+      background: var(--card);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>Conditions d’utilisation de Flokzee</h1>
-      <p>Version du 21/09/2025</p>
-      <span class="badge">Âge minimum : 18 ans</span>
+      <select id="language" class="lang-select">
+        <option value="fr" selected>Français</option>
+        <option value="en">English</option>
+      </select>
+      <h1 id="title">Conditions d’utilisation de Flokzee</h1>
+      <p id="version">Version du 21/09/2025</p>
+      <span id="age" class="badge">Âge minimum : 18 ans</span>
     </header>
 
     <section>
-      <h2>1. Objet</h2>
-      <p>Les présentes conditions régissent l’utilisation de l’application <strong>Flokzee</strong>. En créant un compte ou en utilisant l’app, vous acceptez ces conditions.</p>
+      <h2 id="obj-title">1. Objet</h2>
+      <p id="obj-text">Les présentes conditions régissent l’utilisation de l’application <strong>Flokzee</strong>. En créant un compte ou en utilisant l’app, vous acceptez ces conditions.</p>
     </section>
 
     <section id="eligibilite">
-      <h2>2. Éligibilité et contrôle de l’âge</h2>
-      <ul>
-        <li>L’inscription et l’utilisation de Flokzee sont <strong>strictement réservées aux personnes âgées de 18 ans ou plus</strong>.</li>
+      <h2 id="elig-title">2. Éligibilité et contrôle de l’âge</h2>
+      <ul id="elig-list">
+        <li>L’inscription et l’utilisation de Flokzee sont <strong>strictement réservées aux personnes âgées de 18 ans ou plus</strong>.</li>
         <li>Un mécanisme de contrôle de l’âge empêche la création d’un compte par un mineur. Nous pouvons demander des éléments de vérification supplémentaires en cas de doute.</li>
-        <li>En acceptant ces conditions, vous <strong>déclarez et garantissez avoir 18 ans ou plus</strong>. La fourniture d’informations inexactes entraînera la suspension ou la suppression du compte.</li>
+        <li>En acceptant ces conditions, vous <strong>déclarez et garantissez avoir 18 ans ou plus</strong>. La fourniture d’informations inexactes entraînera la suspension ou la suppression du compte.</li>
       </ul>
     </section>
 
     <section id="regles">
-      <h2>3. Règles d’utilisation et contenus interdits</h2>
-      <p>Pour garantir un espace sûr et respectueux, il est interdit de publier, promouvoir, organiser ou solliciter :</p>
-      <ul>
-        <li><strong>Alcool, tabac et drogues</strong> : toute incitation à la consommation, représentations valorisant ou normalisant leur usage, ou organisation d’événements centrés sur ces produits.</li>
-        <li><strong>Contenu à caractère sexuel</strong> : discussions, sollicitations ou images à connotation sexuelle, nudité, sexting, contenus suggestifs ou destinés à des rencontres sexuelles.</li>
+      <h2 id="rules-title">3. Règles d’utilisation et contenus interdits</h2>
+      <p id="rules-intro">Pour garantir un espace sûr et respectueux, il est interdit de publier, promouvoir, organiser ou solliciter :</p>
+      <ul id="rules-list">
+        <li><strong>Alcool, tabac et drogues</strong> : toute incitation à la consommation, représentations valorisant ou normalisant leur usage, ou organisation d’événements centrés sur ces produits.</li>
+        <li><strong>Contenu à caractère sexuel</strong> : discussions, sollicitations ou images à connotation sexuelle, nudité, sexting, contenus suggestifs ou destinés à des rencontres sexuelles.</li>
         <li>Tout contenu illégal, haineux, violent, harcelant, diffamatoire, ou portant atteinte aux droits d’autrui.</li>
       </ul>
-      <p>Nous nous réservons le droit de retirer tout contenu non conforme et de sanctionner les comptes concernés sans préavis.</p>
+      <p id="rules-end">Nous nous réservons le droit de retirer tout contenu non conforme et de sanctionner les comptes concernés sans préavis.</p>
     </section>
 
     <section id="moderation">
-      <h2>4. Modération, signalement et sanctions</h2>
-      <ul>
+      <h2 id="mod-title">4. Modération, signalement et sanctions</h2>
+      <ul id="mod-list">
         <li>Des outils de <strong>signalement</strong> et de <strong>blocage</strong> sont fournis aux utilisateurs.</li>
         <li>Notre équipe peut modérer, masquer ou supprimer des contenus et suspendre/supprimer les comptes en cas de violation.</li>
         <li>Les violations graves ou répétées peuvent entraîner une <strong>suspension définitive</strong>.</li>
@@ -77,26 +90,72 @@
     </section>
 
     <section id="responsabilite">
-      <h2>5. Responsabilité de l’utilisateur</h2>
-      <ul>
+      <h2 id="resp-title">5. Responsabilité de l’utilisateur</h2>
+      <ul id="resp-list">
         <li>Vous êtes responsable des contenus que vous publiez et garantissez disposer des droits nécessaires.</li>
         <li>Vous vous engagez à respecter les lois applicables et ces règles d’utilisation.</li>
       </ul>
     </section>
 
     <section id="modifs">
-      <h2>6. Modifications</h2>
-      <p>Nous pouvons modifier ces conditions pour des raisons juridiques ou opérationnelles. La date de mise à jour sera indiquée en haut de page. L’utilisation continue de l’app vaut acceptation des modifications.</p>
+      <h2 id="modif-title">6. Modifications</h2>
+      <p id="modif-text">Nous pouvons modifier ces conditions pour des raisons juridiques ou opérationnelles. La date de mise à jour sera indiquée en haut de page. L’utilisation continue de l’app vaut acceptation des modifications.</p>
     </section>
 
     <section id="contact">
-      <h2>7. Contact</h2>
-      <p>Pour toute question ou pour signaler un contenu, contactez-nous : <a href="mailto:christy.yesso@gmail.com">christy.yesso@gmail.com</a>.</p>
+      <h2 id="contact-title">7. Contact</h2>
+      <p id="contact-text">Pour toute question ou pour signaler un contenu, contactez-nous : <a href="mailto:christy.yesso@gmail.com">christy.yesso@gmail.com</a>.</p>
     </section>
 
     <footer>
-      <p><em>Remarque : ce document d’information n’est pas un conseil juridique. Pensez à le faire valider par un conseil si nécessaire.</em></p>
+      <p id="footer-note"><em>Remarque : ce document d’information n’est pas un conseil juridique. Pensez à le faire valider par un conseil si nécessaire.</em></p>
     </footer>
   </div>
+
+  <script>
+    const translations = {
+      fr: {
+        title: "Conditions d’utilisation de Flokzee",
+        version: "Version du 21/09/2025",
+        age: "Âge minimum : 18 ans",
+        objTitle: "1. Objet",
+        objText: "Les présentes conditions régissent l’utilisation de l’application Flokzee. En créant un compte ou en utilisant l’app, vous acceptez ces conditions.",
+        eligTitle: "2. Éligibilité et contrôle de l’âge",
+        rulesTitle: "3. Règles d’utilisation et contenus interdits",
+        modTitle: "4. Modération, signalement et sanctions",
+        respTitle: "5. Responsabilité de l’utilisateur",
+        modifTitle: "6. Modifications",
+        contactTitle: "7. Contact",
+        contactText: "Pour toute question ou pour signaler un contenu, contactez-nous : <a href='mailto:christy.yesso@gmail.com'>christy.yesso@gmail.com</a>.",
+        footerNote: "Remarque : ce document d’information n’est pas un conseil juridique. Pensez à le faire valider par un conseil si nécessaire."
+      },
+      en: {
+        title: "Flokzee Terms of Use",
+        version: "Version dated 09/21/2025",
+        age: "Minimum age: 18 years old",
+        objTitle: "1. Purpose",
+        objText: "These terms govern the use of the Flokzee application. By creating an account or using the app, you agree to these terms.",
+        eligTitle: "2. Eligibility and Age Verification",
+        rulesTitle: "3. Rules of Use and Prohibited Content",
+        modTitle: "4. Moderation, Reporting, and Sanctions",
+        respTitle: "5. User Responsibility",
+        modifTitle: "6. Modifications",
+        contactTitle: "7. Contact",
+        contactText: "For any questions or to report content, contact us at <a href='mailto:christy.yesso@gmail.com'>christy.yesso@gmail.com</a>.",
+        footerNote: "Note: This informational document is not legal advice. Consider having it reviewed by a legal professional."
+      }
+    };
+
+    const langSelect = document.getElementById('language');
+    const updateLang = (lang) => {
+      const t = translations[lang];
+      for (const key in t) {
+        const el = document.getElementById(key.replace(/([A-Z])/g, '-$1').toLowerCase());
+        if (el) el.innerHTML = t[key];
+      }
+    };
+
+    langSelect.addEventListener('change', (e) => updateLang(e.target.value));
+  </script>
 </body>
 </html>
