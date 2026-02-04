@@ -1,244 +1,338 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title id="doc-title">Conditions d’utilisation – Flokzee</title>
+  <title>Conditions d’utilisation – Flokzee</title>
+  <meta name="robots" content="index,follow" />
   <style>
     :root {
-      --bg: #faf9f7;
-      --fg: #1f2937;
-      --muted: #6b7280;
-      --card: #ffffff;
-      --accent: #111827;
+      --bg: #0b0b0f;
+      --card: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --border: rgba(255,255,255,0.12);
+      --accent: #ffffff;
+      --link: rgba(255,255,255,0.92);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
-    html, body { height: 100%; margin: 0; }
+    * { box-sizing: border-box; }
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(255,255,255,0.05), transparent 55%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(255,255,255,0.04), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
     }
     .wrap {
-      max-width: 860px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 32px 20px 64px;
+      padding: 28px 18px 56px;
     }
-    header h1 { margin: 0 0 4px; font-size: 32px; }
-    header p { margin: 0; color: var(--muted); }
-    section { background: var(--card); border-radius: 16px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.05); margin-top: 20px; }
-    h2 { margin-top: 0; font-size: 20px; }
-    ul { padding-left: 20px; }
-    a { color: var(--accent); }
-    footer { margin-top: 24px; color: var(--muted); font-size: 14px; }
-    .badge { display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#3730a3; font-size:12px; }
-    .lang-select {
-      float: right;
-      background: var(--card);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 6px 10px;
-      font-size: 14px;
+    .langbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 18px;
+    }
+    .langbtn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
       cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: transform .06s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .langbtn:hover { transform: translateY(-1px); }
+    .langbtn.active {
+      background: var(--card);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.22);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+    }
+    h1 {
+      margin: 4px 0 10px;
+      font-size: 28px;
+      line-height: 1.15;
+    }
+    .meta {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 14px;
+    }
+    h2 {
+      margin: 22px 0 10px;
+      font-size: 18px;
+    }
+    h3 {
+      margin: 16px 0 8px;
+      font-size: 16px;
+      color: var(--text);
+    }
+    p { margin: 10px 0; color: var(--text); }
+    ul { margin: 8px 0 12px 22px; }
+    li { margin: 6px 0; color: var(--text); }
+    .muted { color: var(--muted); }
+    a { color: var(--link); text-decoration: underline; }
+    .hidden { display: none; }
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 18px 0;
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <select id="language" class="lang-select" aria-label="Language selector">
-        <option value="fr">Français</option>
-        <option value="en">English</option>
-      </select>
+  <main class="wrap">
+    <!-- Language selector (kept in the same simple format) -->
+    <div class="langbar" aria-label="Language selector">
+      <button id="btn-fr" class="langbtn" type="button">Français</button>
+      <button id="btn-en" class="langbtn" type="button">English</button>
+    </div>
 
-      <h1 data-i18n="title">Conditions d’utilisation de Flokzee</h1>
-      <p data-i18n="version">Version du 21/09/2025</p>
-      <span class="badge" data-i18n="age">Âge minimum&nbsp;: 18&nbsp;ans</span>
-    </header>
+    <section class="card" id="content-fr" lang="fr">
+      <h1>Conditions générales d’utilisation (CGU) – Flokzee</h1>
+      <p class="meta">Version : <span class="muted">[à mettre à jour]</span></p>
 
-    <section>
-      <h2 data-i18n="objTitle">1. Objet</h2>
-      <p data-i18n="objText">Les présentes conditions régissent l’utilisation de l’application <strong>Flokzee</strong>. En créant un compte ou en utilisant l’app, vous acceptez ces conditions.</p>
-    </section>
+      <h2>ARTICLE 1 — OBJET DE NOS CGU</h2>
+      <p>Nous exploitons l’application mobile « FLOKZEE » déployable dans les environnements Android et iOS (désignée « notre application »), par laquelle nous proposons un service de mise en relation des personnes souhaitant faire des rencontres amicales (notre « service »).</p>
+      <p>Notre service est exclusivement réservé aux personnes majeures.</p>
+      <p>Ces conditions générales d’utilisation (désignées « nos CGU ») sont conclues entre vous et nous pour toute utilisation de notre application.</p>
+      <p>Lisez attentivement ce document. Pour pouvoir utiliser les services de notre application, vous devez obligatoirement prendre connaissance de nos CGU et les accepter sans réserve, c’est-à-dire sans modifications, ajouts ou retranchements.</p>
 
-    <section id="eligibilite">
-      <h2 data-i18n="eligTitle">2. Éligibilité et contrôle de l’âge</h2>
-      <ul data-i18n="eligList">
-        <li>L’inscription et l’utilisation de Flokzee sont <strong>strictement réservées aux personnes âgées de 18&nbsp;ans ou plus</strong>.</li>
-        <li>Un mécanisme de contrôle de l’âge empêche la création d’un compte par un mineur. Nous pouvons demander des éléments de vérification supplémentaires en cas de doute.</li>
-        <li>En acceptant ces conditions, vous <strong>déclarez et garantissez avoir 18&nbsp;ans ou plus</strong>. La fourniture d’informations inexactes entraînera la suspension ou la suppression du compte.</li>
+      <h2>ARTICLE 2 — MODIFICATIONS DE NOS CGU</h2>
+      <p>Nous pouvons modifier nos CGU à tout moment. Vous en serez informé par email si vous avez déjà créé un compte, ou par une annonce sur l’application.</p>
+      <p>Si vous n’êtes pas d’accord avec la nouvelle version de nos CGU, vous pourrez supprimer votre compte utilisateur. Vous ne pourrez alors plus bénéficier de notre service. Si vous continuez à utiliser notre application même après que la nouvelle version de nos CGU est applicable, nous considèrerons que vous avez accepté cette version.</p>
+
+      <h2>ARTICLE 3 — DESCRIPTION DE NOTRE SERVICE</h2>
+      <p>Notre service permet de mettre en relation des personnes qui souhaitent faire des rencontres amicales.</p>
+      <p>L’accès à notre service et son utilisation sont gratuits.</p>
+      <p>Sous réserve d’avoir un compte utilisateur actif, vous pourrez entrer en relation avec un autre utilisateur, et tout utilisateur pourra entrer en relation avec vous par l’intermédiaire de l’application. Vous pourrez interagir et échanger avec les autres utilisateurs directement sur notre application notamment par le système de messagerie ou de chat. Nous ne sommes pas partie aux échanges entre utilisateurs.</p>
+      <p>Nous n’intervenons pas comme mandataire de qui que ce soit et notre intervention se limite à faciliter la mise en relation entre utilisateurs.</p>
+      <p>Les informations que vous communiquez sur votre profil, en particulier image de profil, nom, prénom, âge, ville de résidence et texte de présentation seront visibles de tous les utilisateurs.</p>
+      <p>Par défaut, les profils sont présentés de façon purement aléatoire. Vous pouvez aussi renseigner plusieurs filtres de recherche afin d’obtenir des résultats qui correspondent plus à vos critères.</p>
+
+      <h2>ARTICLE 4 — COMPTE UTILISATEUR</h2>
+
+      <h3>4.1 Création de compte</h3>
+      <p>Il est obligatoire d’être majeur et de posséder un compte utilisateur en cours de validité pour accéder aux contenus de l’application et bénéficier de nos services.</p>
+      <p>Vous devez nous fournir des données sincères et complètes vous concernant, les mettre à jour si elles évoluent et les corriger spontanément si vous repérez des erreurs. Nous nous réservons le droit de solliciter des justificatifs à tout moment.</p>
+      <p>Les paramètres de connexion sont uniques, personnels et strictement confidentiels. Vous êtes seul responsable de l’utilisation de vos identifiants, vous vous engagez à en faire un usage personnel et à ne pas les communiquer à des tiers.</p>
+
+      <h3>4.2 Suppression ou mise en pause de compte</h3>
+      <p>Vous pouvez à tout moment demander la suppression de votre compte utilisateur ou le mettre en pause, en suivant la procédure prévue à cet effet ou en en faisant la demande par courriel.</p>
+      <p>Nous nous réservons la possibilité de suspendre ou supprimer tout compte dans l’éventualité où nous considérerions l’activité du compte comme étant suspecte ou contrevenante aux obligations des utilisateurs, par exemple si le titulaire de ce compte se trouvait être mineur.</p>
+      <p>Votre compte sera également supprimé si vous avez fait l’objet d’au moins trois signalements par d’autres utilisateurs, non annulés par la suite.</p>
+
+      <h3>4.3 Signalements</h3>
+      <p>Tout utilisateur peut signaler un contenu ou un compte utilisateur lorsqu’il estime qu’un autre utilisateur ne respecte pas ses obligations légales ou les règles de l’application.</p>
+      <p>Nous nous réservons la possibilité de vous contacter directement après avoir reçu un signalement de votre part, pour en savoir plus sur les raisons de votre signalement. Tout signalement doit être justifié.</p>
+      <p>A partir de deux signalements reçus vous concernant, nous vous en informerons et vous aurez la possibilité de répondre. Après avoir reçu votre réponse, tout signalement qui nous apparaîtrait infondé sera annulé.</p>
+
+      <h2>ARTICLE 5 — NIVEAU DE SERVICE</h2>
+      <p>Vous devez prendre à votre charge tous les frais nécessaires à l’achat, la mise en place, la maintenance et la connexion des différents moyens de télécommunication nécessaires à l’accès à notre application.</p>
+      <p>Nous seuls sommes autorisés à assurer ou faire assurer la maintenance corrective de notre application, mais nous ne sommes pas tenus pour autant à une obligation de maintenance. Nous ne garantissons pas l’absence totale d’erreur ou d’anomalie dans notre application. Vous pouvez nous signaler toute anomalie de connexion ou d’utilisation.</p>
+      <p>Nous nous réservons le droit de faire évoluer notre application et nos services par des mises à jour. Certaines mises à jour auront une finalité corrective, d’autres une finalité évolutive, notamment pour améliorer notre application ou pour la maintenir conforme à la réglementation applicable. Nous vous informons que l’accès à notre application pourra être temporairement interrompu en cas de maintenance ou de mise à jour. Vous en serez informé par une notification sur la page d’accueil de notre application.</p>
+      <p>Veuillez noter que le réseau Internet présente nécessairement des aléas techniques qui peuvent affecter l’utilisation de notre application.</p>
+
+      <h2>ARTICLE 6 — COMMENTAIRES, MESSAGES ET DOCUMENTS QUE VOUS POSTEZ</h2>
+
+      <h3>6.1 Dispositions générales</h3>
+      <p>Notre application permet de poster des textes, des images et des messages visibles par les autres utilisateurs.</p>
+      <p>Vous vous engagez à diffuser des informations sincères et loyales en lien avec l’usage attendu de notre application et à vous comporter loyalement, avec politesse et courtoisie avec les autres utilisateurs, et dans tous les cas à ne pas porter atteinte aux droits de tiers, de quelque façon que ce soit.</p>
+      <p>Nous nous réservons la possibilité de supprimer, sans avoir besoin de nous justifier, tout contenu qui enfreindrait ces engagements. Une telle faculté ne s’interprète pas comme un devoir de vigilance de notre part.</p>
+      <p>En envoyant une photographie sur notre application, vous nous concédez une licence d’utilisation de la photographie envoyée, à titre non exclusif (c’est-à-dire que vous pouvez exploiter votre photographie de votre côté et autoriser d’autres personnes à l’exploiter), pour le monde entier, et pour toute la durée actuellement accordée ou qui sera accordée à l’avenir en droit français à l’auteur d’une photographie. Vous nous autorisez à représenter et à reproduire votre photographie, sous format papier ou numérique, dans notre réseau informatique interne, sur notre application. Vous nous garantissez que vous détenez l’intégralité des droits d’auteur sur la photographie et que celle-ci n’est pas constitutive d’une contrefaçon ou d’une atteinte aux droits d’un tiers.</p>
+
+      <h3>6.2 Chiffrement des conversations</h3>
+      <p>A des fins de confidentialité et de sécurité, les conversations que vous échangez avec un autre utilisateur ou au sein d’un groupe sont chiffrées en base. Nous détenons toutefois les clés et nous nous réservons le droit de les déchiffrer en cas de plainte d’utilisateur, suspicion de harcèlement, menace, contenu illégal, demande des autorités.</p>
+
+      <h2>ARTICLE 7 — OBLIGATIONS DE L’UTILISATEUR</h2>
+      <p>Vous devez utiliser notre application de manière conforme à sa destination et licite, c’est-à-dire conformément aux lois et règlements en vigueur et conformément à nos conditions générales.</p>
+      <p>En tant qu’utilisateur, vous vous engagez à :</p>
+      <ul>
+        <li>Être majeur au moment de la création de votre compte</li>
+        <li>Diffuser des informations sincères vous concernant</li>
+        <li>Adopter un comportement courtois et respectueux avec les utilisateurs avec qui vous pourriez être mise en relation, dans un objectif de rencontres amicales</li>
+        <li>Ne pas utiliser notre application à des fins de vendre des produits ou des services, de quelque nature que ce soit</li>
+        <li>Ne pas diffuser de contenu (documents, textes, images) à caractère sexuel ou comportant des scènes de nudité</li>
+        <li>Ne pas promouvoir la consommation d’alcool, de drogue ou de toute substance ou activité illicite</li>
       </ul>
-    </section>
-
-    <section id="regles">
-      <h2 data-i18n="rulesTitle">3. Règles d’utilisation et contenus interdits</h2>
-      <p data-i18n="rulesIntro">Pour garantir un espace sûr et respectueux, il est interdit de publier, promouvoir, organiser ou solliciter&nbsp;:</p>
-      <ul data-i18n="rulesList">
-        <li><strong>Alcool, tabac et drogues</strong> : toute incitation à la consommation, représentations valorisant ou normalisant leur usage, ou organisation d’événements centrés sur ces produits.</li>
-        <li><strong>Contenu à caractère sexuel</strong> : discussions, sollicitations ou images à connotation sexuelle, nudité, sexting, contenus suggestifs ou destinés à des rencontres sexuelles.</li>
-        <li>Tout contenu illégal, haineux, violent, harcelant, diffamatoire, ou portant atteinte aux droits d’autrui.</li>
+      <p>Par ailleurs, il est interdit de :</p>
+      <ul>
+        <li>utiliser notre application à des fins d’analyse concurrentielle, de benchmark, de sourcing, de renseignements sur les autres utilisateurs, de promotion commerciale ou de démarchage pour son compte ou celui d’un tiers,</li>
+        <li>utiliser un bot, un robot ou tout autre procédé ou outil automatisé équivalent ou système d’exploration de données lors de l’utilisation de notre application,</li>
+        <li>perturber le fonctionnement normal de notre application et/ou interférer avec, notamment au moyen d’un téléchargement de virus informatique, d’une surcharge, de flooding, spamming, mail bombing ou crashing,</li>
       </ul>
-      <p data-i18n="rulesEnd">Nous nous réservons le droit de retirer tout contenu non conforme et de sanctionner les comptes concernés sans préavis.</p>
+
+      <h2>ARTICLE 8 — RESPONSABILITÉ</h2>
+      <p>Nous agissons comme simple intermédiaire technique aux fins de mise en relation. Nous ne sommes pas partie à un quelconque contrat conclu entre utilisateurs. Nous n’intervenons pas dans les échanges et/ou litiges entre utilisateurs.</p>
+      <p>Le référencement des profils d’utilisateurs sur notre application ne saurait valoir recommandation de notre part, nous n’avons pas d’autre lien avec les utilisateurs référencés que les présentes conditions générales.</p>
+      <p>Les informations sur les profils des utilisateurs sont communiquées par eux seuls, nous ne pouvons garantir l’exactitude de ces informations.</p>
+      <p>Notre application est une solution informatique standardisée qui n’a pas été développé pour les besoins d’un utilisateur particulier. Nous nous efforçons de vous fournir un accès stable et ininterrompu à notre application. Nous ne garantissons cependant pas l’absence totale d’erreur ou d’anomalie, et ne pouvons pas en être tenu responsables. Vous êtes informé que l’accès à l’application pourra être temporairement interrompu en cas de maintenance ou de mise à jour, sans que cela ne vous ouvre droit à indemnité.</p>
+      <p>Notre responsabilité ne pourra pas être engagée si le dommage est entièrement causé par votre négligence ou votre faute, par le fait imprévisible et insurmontable d’un tiers ou en cas de force majeure. La force majeure s’entend de tout événement extérieur, imprévisible et irrésistible au sens de l’article 1218 du code civil et tel que défini par la jurisprudence.</p>
+
+      <h2>ARTICLE 9 — PROPRIÉTÉ INTELLECTUELLE</h2>
+      <p>Rien dans ce document ne vous autorise à exploiter les actifs de propriété intellectuelle présents sur notre application, ou sur notre documentation.</p>
+      <p>Tous les textes, images, logos et interfaces graphiques présents sur notre application et sur l’ensemble de notre documentation ainsi que la composante informatique de notre application (logiciel et sa documentation) font l’objet d’une protection par le droit d'auteur pour le monde entier. Il est par conséquent interdit à toute personne de copier, modifier, distribuer, transmettre, diffuser, représenter, reproduire, publier, concéder sous forme de licence, transférer ou exploiter de toute autre manière les éléments précités, toutes ces utilisations étant susceptibles de constituer une contrefaçon.</p>
+      <p>Il est interdit d’intervenir sur le code source de notre application de quelque manière et pour quelque raison que ce soit, y compris pour en corriger les erreurs ou anomalies, la maintenance étant gérée par nous.</p>
+      <p>Le contenu de la base de données de notre service est protégé par le droit sui generis du producteur de bases de données. Conformément à l’article L. 342-1 du code de la propriété intellectuelle, nous interdisons à tout personne l’extraction et la réutilisation du contenu de cette base de données.</p>
+      <p>Il est interdit de modifier ou de chercher à contourner toute mesure technique de protection appliquée à notre application.</p>
+      <p>Quiconque ne respecterait pas ces droits de propriété intellectuelle s’expose à des poursuites.</p>
+
+      <h2>ARTICLE 10 — LOI APPLICABLE</h2>
+      <p>La loi applicable à nos CGU (et à tout contrat qui est régi par elles) est la loi française.</p>
+      <p>Si vous êtes un consommateur, ce choix de loi ne prive pas d’effet les dispositions impératives de la loi du pays où vous avez votre résidence habituelle (Règlement 593/2008/CE, article 6, point 2).</p>
     </section>
 
-    <section id="moderation">
-      <h2 data-i18n="modTitle">4. Modération, signalement et sanctions</h2>
-      <ul data-i18n="modList">
-        <li>Des outils de <strong>signalement</strong> et de <strong>blocage</strong> sont fournis aux utilisateurs.</li>
-        <li>Notre équipe peut modérer, masquer ou supprimer des contenus et suspendre/supprimer les comptes en cas de violation.</li>
-        <li>Les violations graves ou répétées peuvent entraîner une <strong>suspension définitive</strong>.</li>
+    <section class="card hidden" id="content-en" lang="en" style="margin-top:18px;">
+      <h1>Terms and Conditions of Use – Flokzee</h1>
+      <p class="meta">Version: <span class="muted">[to be updated]</span></p>
+
+      <h2>ARTICLE 1 – PURPOSE OF OUR TERMS</h2>
+      <p>We operate the mobile application “FLOKZEE”, available on Android and iOS platforms (hereinafter referred to as “our application”), through which we offer a service designed to connect individuals seeking friendly relationships (our “service”).</p>
+      <p>Our service is strictly reserved for adults.</p>
+      <p>These Terms and Conditions of Use (hereinafter referred to as “our Terms”) are entered into between you and us for any use of our application.</p>
+      <p>Please read this document carefully. In order to use the services of our application, you must read and accept our Terms without reservation, meaning without any modification, addition, or deletion.</p>
+
+      <h2>ARTICLE 2 – AMENDMENTS TO OUR TERMS</h2>
+      <p>We may modify our Terms at any time. You will be informed of such changes by email if you have already created an account, or through a notification within the application.</p>
+      <p>If you do not agree with the new version of our Terms, you may delete your user account. In this case, you will no longer be able to benefit from our service.</p>
+      <p>If you continue to use our application after the new version of the Terms becomes applicable, we will consider that you have accepted the updated version.</p>
+
+      <h2>ARTICLE 3 – DESCRIPTION OF OUR SERVICE</h2>
+      <p>Our service allows individuals who wish to form friendly relationships to connect with one another.</p>
+      <p>Access to and use of our service are free of charge.</p>
+      <p>Provided that you have an active user account, you may connect with other users, and other users may connect with you through the application. You may interact and communicate with other users directly within the application, notably via the messaging or chat system. We are not a party to the exchanges between users.</p>
+      <p>We do not act as an agent or representative for any user, and our role is strictly limited to facilitating connections between users.</p>
+      <p>The information you provide on your profile, in particular your profile picture, first name, last name, age, city of residence, and personal description, is visible to all users.</p>
+      <p>By default, profiles are displayed in a purely random manner. You may also set various search filters in order to obtain results that better match your criteria.</p>
+
+      <h2>ARTICLE 4 – USER ACCOUNT</h2>
+
+      <h3>4.1 Account Creation</h3>
+      <p>You must be an adult and have a valid user account in order to access the content of the application and benefit from our services.</p>
+      <p>You must provide accurate and complete information about yourself, keep it up to date if it changes, and correct it spontaneously if you notice any errors. We reserve the right to request supporting documents at any time.</p>
+      <p>Your login credentials are unique, personal, and strictly confidential. You are solely responsible for the use of your credentials and agree to use them personally and not to disclose them to any third party.</p>
+
+      <h3>4.2 Account Deletion or Suspension</h3>
+      <p>You may request the deletion or temporary suspension of your user account at any time by following the procedure provided for this purpose or by submitting a request by email.</p>
+      <p>We reserve the right to suspend or delete any account if we consider its activity to be suspicious or in violation of user obligations, for example if the account holder is found to be a minor.</p>
+      <p>Your account will also be deleted if you receive at least three reports from other users that are not subsequently dismissed.</p>
+
+      <h3>4.3 Reports</h3>
+      <p>Any user may report content or a user account if they believe that another user is not complying with their legal obligations or the rules of the application.</p>
+      <p>We reserve the right to contact you directly after receiving a report from you in order to better understand the reasons for the report. All reports must be justified.</p>
+      <p>From the second report received concerning you, we will inform you and you will have the opportunity to respond. After reviewing your response, any report that we consider unfounded will be dismissed.</p>
+
+      <h2>ARTICLE 5 – SERVICE LEVEL</h2>
+      <p>You are responsible for all costs necessary for the purchase, installation, maintenance, and connection of the various telecommunications resources required to access our application.</p>
+      <p>We alone are authorized to provide or arrange corrective maintenance of our application; however, we are not subject to any maintenance obligation. We do not guarantee the complete absence of errors or malfunctions in our application. You may report any connection or usage issues to us.</p>
+      <p>We reserve the right to update and improve our application and services. Some updates will be corrective, while others will be evolutionary, particularly to enhance the application or ensure compliance with applicable regulations.</p>
+      <p>Please note that access to our application may be temporarily interrupted for maintenance or updates. You will be informed by a notification displayed on the home screen of the application.</p>
+      <p>You acknowledge that the Internet network is subject to technical uncertainties that may affect the use of our application.</p>
+
+      <h2>ARTICLE 6 – COMMENTS, MESSAGES, AND CONTENT YOU POST</h2>
+
+      <h3>6.1 General Provisions</h3>
+      <p>Our application allows users to post texts, images, and messages that are visible to other users.</p>
+      <p>You agree to share accurate and honest information consistent with the intended use of the application and to behave loyally, politely, and respectfully toward other users. Under no circumstances may you infringe upon the rights of third parties in any manner whatsoever.</p>
+      <p>We reserve the right to remove, without justification, any content that violates these commitments. This right shall not be interpreted as an obligation of continuous monitoring on our part.</p>
+      <p>By uploading a photograph to our application, you grant us a non-exclusive license to use the submitted photograph worldwide, for the entire duration of the copyright protection currently granted or that may be granted in the future under French law.</p>
+      <p>You authorize us to reproduce and display your photograph, in paper or digital format, within our internal IT network and on our application. You guarantee that you hold all intellectual property rights to the photograph and that it does not infringe upon the rights of any third party.</p>
+
+      <h3>6.2 Encryption of Conversations</h3>
+      <p>For confidentiality and security purposes, conversations exchanged with another user or within a group are stored in encrypted form.</p>
+      <p>However, we retain the encryption keys and reserve the right to decrypt conversations in the event of a user complaint, suspicion of harassment, threats, illegal content, or upon request from the authorities.</p>
+
+      <h2>ARTICLE 7 – USER OBLIGATIONS</h2>
+      <p>You must use our application in accordance with its intended purpose and in a lawful manner, in compliance with applicable laws and regulations and with these Terms.</p>
+      <p>As a user, you agree to:</p>
+      <ul>
+        <li>Be of legal age at the time of account creation</li>
+        <li>Provide accurate information about yourself</li>
+        <li>Behave respectfully and courteously toward users you interact with, for the purpose of forming friendly relationships</li>
+        <li>Not use the application to sell products or services of any kind</li>
+        <li>Not distribute content of a sexual nature or containing nudity</li>
+        <li>Not promote the consumption of alcohol, drugs, or any illicit substances or activities</li>
       </ul>
-    </section>
-
-    <section id="responsabilite">
-      <h2 data-i18n="respTitle">5. Responsabilité de l’utilisateur</h2>
-      <ul data-i18n="respList">
-        <li>Vous êtes responsable des contenus que vous publiez et garantissez disposer des droits nécessaires.</li>
-        <li>Vous vous engagez à respecter les lois applicables et ces règles d’utilisation.</li>
+      <p>It is strictly prohibited to:</p>
+      <ul>
+        <li>Use the application for competitive analysis, benchmarking, data sourcing, intelligence gathering on other users, commercial promotion, or solicitation for yourself or third parties</li>
+        <li>Use bots, robots, or any automated tools or data mining systems when using the application</li>
+        <li>Disrupt the normal operation of the application or interfere with it, including through viruses, overloads, flooding, spamming, mail bombing, or system crashes</li>
       </ul>
-    </section>
 
-    <section id="modifs">
-      <h2 data-i18n="modifTitle">6. Modifications</h2>
-      <p data-i18n="modifText">Nous pouvons modifier ces conditions pour des raisons juridiques ou opérationnelles. La date de mise à jour sera indiquée en haut de page. L’utilisation continue de l’app vaut acceptation des modifications.</p>
-    </section>
+      <h2>ARTICLE 8 – LIABILITY</h2>
+      <p>We act solely as a technical intermediary for the purpose of connecting users. We are not a party to any agreement entered into between users and do not intervene in user exchanges or disputes.</p>
+      <p>The listing of user profiles on our application does not constitute any recommendation on our part. We have no relationship with listed users other than those governed by these Terms.</p>
+      <p>The information displayed on user profiles is provided solely by the users themselves, and we cannot guarantee its accuracy.</p>
+      <p>Our application is a standardized software solution that was not developed to meet the specific needs of any particular user. While we strive to provide stable and uninterrupted access, we do not guarantee the absence of errors or malfunctions and cannot be held liable for them.</p>
+      <p>Access to the application may be temporarily interrupted due to maintenance or updates, without entitling you to any compensation.</p>
+      <p>We shall not be held liable if the damage is entirely caused by your negligence or fault, by the unforeseeable and unavoidable act of a third party, or in the event of force majeure, as defined by Article 1218 of the French Civil Code and relevant case law.</p>
 
-    <section id="contact">
-      <h2 data-i18n="contactTitle">7. Contact</h2>
-      <p data-i18n="contactText">Pour toute question ou pour signaler un contenu, contactez-nous&nbsp;: <a href="mailto:christy.yesso@gmail.com">christy.yesso@gmail.com</a>.</p>
-    </section>
+      <h2>ARTICLE 9 – INTELLECTUAL PROPERTY</h2>
+      <p>Nothing in this document authorizes you to use the intellectual property assets present in our application or documentation.</p>
+      <p>All texts, images, logos, and graphical interfaces available in our application and documentation, as well as the software components of the application, are protected by copyright worldwide.</p>
+      <p>It is strictly prohibited to copy, modify, distribute, transmit, broadcast, display, reproduce, publish, license, transfer, or otherwise exploit any of the aforementioned elements, as such actions may constitute copyright infringement.</p>
+      <p>Any intervention in the source code of the application, for any reason whatsoever, including for error correction, is prohibited. Maintenance is managed exclusively by us.</p>
+      <p>The content of the service’s database is protected by the sui generis right of database producers. In accordance with Article L.342-1 of the French Intellectual Property Code, any extraction or reuse of database content is prohibited.</p>
+      <p>Any attempt to modify or circumvent technical protection measures applied to the application is strictly prohibited.</p>
+      <p>Any violation of these intellectual property rights may result in legal action.</p>
 
-    <footer>
-      <p data-i18n="footerNote"><em>Remarque&nbsp;: ce document d’information n’est pas un conseil juridique. Pensez à le faire valider par un conseil si nécessaire.</em></p>
-    </footer>
-  </div>
+      <h2>ARTICLE 10 – GOVERNING LAW</h2>
+      <p>These Terms and any contract governed by them are subject to French law.</p>
+      <p>If you are a consumer, this choice of law does not deprive you of the mandatory provisions of the law of the country of your habitual residence, in accordance with Regulation (EC) No. 593/2008, Article 6(2).</p>
+    </section>
+  </main>
 
   <script>
-    // Texte FR + EN (tout le contenu, y compris les listes)
-    const t = {
-      fr: {
-        docTitle: "Conditions d’utilisation – Flokzee",
-        title: "Conditions d’utilisation de Flokzee",
-        version: "Version du 21/09/2025",
-        age: "Âge minimum\u00a0: 18\u00a0ans",
-        objTitle: "1. Objet",
-        objText: "Les présentes conditions régissent l’utilisation de l’application <strong>Flokzee</strong>. En créant un compte ou en utilisant l’app, vous acceptez ces conditions.",
-        eligTitle: "2. Éligibilité et contrôle de l’âge",
-        eligList: `
-          <li>L’inscription et l’utilisation de Flokzee sont <strong>strictement réservées aux personnes âgées de 18&nbsp;ans ou plus</strong>.</li>
-          <li>Un mécanisme de contrôle de l’âge empêche la création d’un compte par un mineur. Nous pouvons demander des éléments de vérification supplémentaires en cas de doute.</li>
-          <li>En acceptant ces conditions, vous <strong>déclarez et garantissez avoir 18&nbsp;ans ou plus</strong>. La fourniture d’informations inexactes entraînera la suspension ou la suppression du compte.</li>
-        `,
-        rulesTitle: "3. Règles d’utilisation et contenus interdits",
-        rulesIntro: "Pour garantir un espace sûr et respectueux, il est interdit de publier, promouvoir, organiser ou solliciter&nbsp;:",
-        rulesList: `
-          <li><strong>Alcool, tabac et drogues</strong> : toute incitation à la consommation, représentations valorisant ou normalisant leur usage, ou organisation d’événements centrés sur ces produits.</li>
-          <li><strong>Contenu à caractère sexuel</strong> : discussions, sollicitations ou images à connotation sexuelle, nudité, sexting, contenus suggestifs ou destinés à des rencontres sexuelles.</li>
-          <li>Tout contenu illégal, haineux, violent, harcelant, diffamatoire, ou portant atteinte aux droits d’autrui.</li>
-        `,
-        rulesEnd: "Nous nous réservons le droit de retirer tout contenu non conforme et de sanctionner les comptes concernés sans préavis.",
-        modTitle: "4. Modération, signalement et sanctions",
-        modList: `
-          <li>Des outils de <strong>signalement</strong> et de <strong>blocage</strong> sont fournis aux utilisateurs.</li>
-          <li>Notre équipe peut modérer, masquer ou supprimer des contenus et suspendre/supprimer les comptes en cas de violation.</li>
-          <li>Les violations graves ou répétées peuvent entraîner une <strong>suspension définitive</strong>.</li>
-        `,
-        respTitle: "5. Responsabilité de l’utilisateur",
-        respList: `
-          <li>Vous êtes responsable des contenus que vous publiez et garantissez disposer des droits nécessaires.</li>
-          <li>Vous vous engagez à respecter les lois applicables et ces règles d’utilisation.</li>
-        `,
-        modifTitle: "6. Modifications",
-        modifText: "Nous pouvons modifier ces conditions pour des raisons juridiques ou opérationnelles. La date de mise à jour sera indiquée en haut de page. L’utilisation continue de l’app vaut acceptation des modifications.",
-        contactTitle: "7. Contact",
-        contactText: "Pour toute question ou pour signaler un contenu, contactez-nous&nbsp;: <a href=\"mailto:christy.yesso@gmail.com\">christy.yesso@gmail.com</a>.",
-        footerNote: "<em>Remarque&nbsp;: ce document d’information n’est pas un conseil juridique. Pensez à le faire valider par un conseil si nécessaire.</em>"
-      },
-      en: {
-        docTitle: "Terms of Use – Flokzee",
-        title: "Flokzee Terms of Use",
-        version: "Version dated 09/21/2025",
-        age: "Minimum age: 18 years old",
-        objTitle: "1. Purpose",
-        objText: "These terms govern the use of the <strong>Flokzee</strong> application. By creating an account or using the app, you agree to these terms.",
-        eligTitle: "2. Eligibility and Age Verification",
-        eligList: `
-          <li>Registration for and use of Flokzee are <strong>strictly limited to individuals aged 18 or over</strong>.</li>
-          <li>An age-gating mechanism prevents a minor from creating an account. We may request additional verification if in doubt.</li>
-          <li>By accepting these terms, you <strong>represent and warrant that you are 18 or older</strong>. Providing inaccurate information will result in suspension or deletion of the account.</li>
-        `,
-        rulesTitle: "3. Rules of Use and Prohibited Content",
-        rulesIntro: "To ensure a safe and respectful space, it is prohibited to publish, promote, organize, or solicit:",
-        rulesList: `
-          <li><strong>Alcohol, tobacco, and drugs</strong>: any encouragement to consume, depictions that glorify or normalize their use, or organizing events centered on these products.</li>
-          <li><strong>Sexual content</strong>: discussions, solicitations, or images of a sexual nature; nudity; sexting; suggestive content; or content intended for sexual encounters.</li>
-          <li>Any content that is illegal, hateful, violent, harassing, defamatory, or infringes the rights of others.</li>
-        `,
-        rulesEnd: "We reserve the right to remove any non-compliant content and sanction affected accounts without prior notice.",
-        modTitle: "4. Moderation, Reporting, and Sanctions",
-        modList: `
-          <li><strong>Reporting</strong> and <strong>blocking</strong> tools are provided to users.</li>
-          <li>Our team may moderate, hide, or delete content and suspend/delete accounts in case of violations.</li>
-          <li>Serious or repeated violations may result in <strong>permanent suspension</strong>.</li>
-        `,
-        respTitle: "5. User Responsibility",
-        respList: `
-          <li>You are responsible for the content you post and you warrant that you hold the necessary rights.</li>
-          <li>You agree to comply with applicable laws and these rules of use.</li>
-        `,
-        modifTitle: "6. Modifications",
-        modifText: "We may amend these terms for legal or operational reasons. The update date will appear at the top of the page. Continued use of the app constitutes acceptance of the changes.",
-        contactTitle: "7. Contact",
-        contactText: "For any questions or to report content, contact us at <a href=\"mailto:christy.yesso@gmail.com\">christy.yesso@gmail.com</a>.",
-        footerNote: "<em>Note: This informational document is not legal advice. Consider having it reviewed by a legal professional.</em>"
+    (function () {
+      const btnFr = document.getElementById("btn-fr");
+      const btnEn = document.getElementById("btn-en");
+      const fr = document.getElementById("content-fr");
+      const en = document.getElementById("content-en");
+
+      function setLang(lang) {
+        const isFr = lang === "fr";
+        fr.classList.toggle("hidden", !isFr);
+        en.classList.toggle("hidden", isFr);
+
+        btnFr.classList.toggle("active", isFr);
+        btnEn.classList.toggle("active", !isFr);
+
+        // Update <html lang="">
+        document.documentElement.lang = isFr ? "fr" : "en";
+
+        try { localStorage.setItem("flokzee_legal_lang", lang); } catch (e) {}
       }
-    };
 
-    const els = {
-      // balise <title>
-      docTitle: document.getElementById('doc-title'),
-      // tout le reste via data-i18n
-      i18nNodes: document.querySelectorAll('[data-i18n]')
-    };
+      btnFr.addEventListener("click", () => setLang("fr"));
+      btnEn.addEventListener("click", () => setLang("en"));
 
-    function applyLang(lang) {
-      const dict = t[lang] || t.fr;
-
-      // html lang
-      document.documentElement.lang = lang;
-      document.documentElement.dir = 'ltr';
-
-      // titre du document
-      if (els.docTitle) els.docTitle.textContent = dict.docTitle;
-
-      // champs marqués data-i18n
-      els.i18nNodes.forEach(node => {
-        const key = node.getAttribute('data-i18n');
-        if (key in dict) {
-          // On remplit en HTML car certains textes contiennent des <strong> ou des liens
-          node.innerHTML = dict[key];
-        }
-      });
-
-      // mémorise le choix
-      try { localStorage.setItem('flokzee_lang', lang); } catch {}
-    }
-
-    // Sélecteur
-    const select = document.getElementById('language');
-    select.addEventListener('change', e => applyLang(e.target.value));
-
-    // Langue initiale : localStorage > navigateur > FR
-    (function initLang() {
-      let initial =
-        (function() { try { return localStorage.getItem('flokzee_lang'); } catch { return null; } })()
-        || (navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en';
-      // Si localStorage renvoie null, l'opérateur ?: ci-dessus pourrait choisir 'en' par erreur.
-      if (initial !== 'fr' && initial !== 'en') {
-        initial = (navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+      // Default: browser language, then saved preference
+      let initial = "fr";
+      try {
+        const saved = localStorage.getItem("flokzee_legal_lang");
+        if (saved === "fr" || saved === "en") initial = saved;
+        else if ((navigator.language || "").toLowerCase().startsWith("en")) initial = "en";
+      } catch (e) {
+        if ((navigator.language || "").toLowerCase().startsWith("en")) initial = "en";
       }
-      select.value = initial;
-      applyLang(initial);
+
+      setLang(initial);
     })();
   </script>
 </body>
