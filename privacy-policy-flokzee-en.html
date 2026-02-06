@@ -1,138 +1,502 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy – Flokzee</title>
-  
+  <title>Flokzee — Privacy Policy / Charte de protection des données</title>
+  <meta name="description" content="Flokzee - Charte de protection des données personnelles / Privacy Policy" />
   <style>
-    :root {
-      --bg: #faf9f7;
-      --fg: #1f2937;
-      --muted: #6b7280;
-      --card: #ffffff;
-      --accent: #111827;
+    :root{
+      --bg:#0b0b0d;
+      --card:#121218;
+      --text:#f2f2f3;
+      --muted:#b9b9c0;
+      --border:#2a2a33;
+      --accent:#f4f0e6;
+      --link:#8ab4ff;
     }
-    html, body { height: 100%; margin: 0; }
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:linear-gradient(180deg, #0b0b0d 0%, #09090b 100%);
+      color:var(--text);
     }
-    .wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 32px 20px 64px;
+    header{
+      position:sticky; top:0;
+      background:rgba(11,11,13,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+      z-index:10;
     }
-    header h1 { margin: 0 0 4px; font-size: 32px; }
-    header p { margin: 0; color: var(--muted); }
-    section { background: var(--card); border-radius: 16px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.05); margin-top: 20px; }
-    h2 { margin-top: 0; font-size: 20px; }
-    ul { padding-left: 20px; }
-    a { color: var(--accent); }
-    footer { margin-top: 24px; color: var(--muted); font-size: 14px; }
-    .badge { display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#3730a3; font-size:12px; }
-    .lang-switch { font-size:14px; color: var(--muted); }
+    .wrap{max-width:980px; margin:0 auto; padding:18px 16px;}
+    .topbar{display:flex; align-items:center; gap:12px; justify-content:space-between; flex-wrap:wrap}
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:240px;
+    }
+    .logo{
+      width:34px; height:34px;
+      border-radius:10px;
+      background:var(--accent);
+      color:#111;
+      display:grid; place-items:center;
+      font-weight:800;
+    }
+    .brand h1{
+      font-size:16px; margin:0; font-weight:700;
+    }
+    .brand p{
+      margin:2px 0 0 0;
+      font-size:12px; color:var(--muted);
+    }
+    .controls{
+      display:flex; align-items:center; gap:10px;
+    }
+    select{
+      background:var(--card);
+      color:var(--text);
+      border:1px solid var(--border);
+      padding:10px 12px;
+      border-radius:12px;
+      outline:none;
+      font-size:14px;
+    }
+    main .card{
+      background:rgba(18,18,24,.72);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px 18px;
+      margin:18px 0 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    h2{margin:0 0 6px 0; font-size:22px}
+    .subtitle{margin:0 0 18px 0; color:var(--muted); font-size:14px}
+    h3{margin:22px 0 10px 0; font-size:16px}
+    p, li{line-height:1.55; color:#e9e9ee}
+    ul{margin:8px 0 0 18px}
+    .muted{color:var(--muted)}
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(10,10,14,.35);
+    }
+    th, td{
+      text-align:left;
+      padding:12px 10px;
+      border-bottom:1px solid var(--border);
+      vertical-align:top;
+      font-size:14px;
+    }
+    th{color:#ffffff; font-weight:700; background:rgba(18,18,24,.6)}
+    tr:last-child td{border-bottom:none}
+    footer{
+      border-top:1px solid var(--border);
+      padding:18px 0 40px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .lang{display:none}
+    .lang.active{display:block}
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+      background:rgba(18,18,24,.55);
+    }
   </style>
-
 </head>
+
 <body>
+<header>
   <div class="wrap">
-    <header>
-      <h1>Privacy Policy</h1>
-      <p>Flokzee — Version 21/09/2025</p>
-      <div class="lang-switch">Cette page existe aussi en <a href="./politique-confidentialite-flokzee-fr.html">français</a>.</div>
-      <span class="badge">Minimum age: 18+</span>
-    </header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">F</div>
+        <div>
+          <h1>Flokzee — Privacy</h1>
+          <p class="muted">Charte de protection des données personnelles / Privacy Policy</p>
+        </div>
+      </div>
 
-    <section>
-      <h2>1. Who we are</h2>
-      <p><strong>Flokzee</strong> is the data controller for the Flokzee app. For any questions, contact
-      <a href="mailto:christy.yesso@gmail.com">christy.yesso@gmail.com</a>.</p>
-    </section>
-
-    <section>
-      <h2>2. Data we collect</h2>
-      <ul>
-        <li><strong>Account</strong>: email address, first/last name/username, date of birth (18+ check), profile photo, country, city, interests, language.</li>
-        <li><strong>User‑generated content</strong>: messages, photos, profiles, events/outings, reports.</li>
-        <li><strong>Device & usage</strong>: device model, OS, app identifiers (non‑advertising), IP addresses, timestamps, crash logs, performance and usage events.</li>
-        <li><strong>Location</strong> (optional): if you allow it, we use approximate location to show nearby content.</li>
-        <li><strong>Notifications</strong> (optional): push token to deliver notifications you enabled.</li>
-        <li><strong>Cookies/local storage</strong>: required for operation, security and preferences.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>3. Purposes</h2>
-      <ul>
-        <li>Create and manage your account; provide app features (profiles, messaging, events, discovery, recommendations).</li>
-        <li>Security, fraud prevention and moderation.</li>
-        <li>Service communications and notifications.</li>
-        <li>Analytics and product improvement (aggregated statistics).</li>
-        <li>Compliance with legal obligations.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>4. Legal bases (GDPR)</h2>
-      <ul>
-        <li><strong>Contract</strong>: to provide and operate Flokzee.</li>
-        <li><strong>Legitimate interests</strong>: security, anti‑abuse, improvements and support.</li>
-        <li><strong>Consent</strong>: location, notifications and any non‑essential processing (you may withdraw consent at any time).</li>
-        <li><strong>Legal obligation</strong>: when required by law or to assert our rights.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>5. Sharing</h2>
-      <ul>
-        <li><strong>Service providers</strong>: hosting, analytics, messaging, notifications, geolocation (e.g., cloud or mapping services). They process data on our behalf under contracts.</li>
-        <li><strong>Other users</strong>: information you choose to make public (profile, content, events) according to your settings.</li>
-        <li><strong>Authorities</strong>: when legally required or to protect rights and safety.</li>
-        <li><strong>International transfers</strong>: if data leaves the EU/EEA, we rely on appropriate safeguards (e.g., Standard Contractual Clauses).</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>6. Retention</h2>
-      <ul>
-        <li>Account data: kept while your account is active; deleted or anonymized within a reasonable time after account deletion.</li>
-        <li>Technical/security logs: up to 12 months.</li>
-        <li>Backups: typical retention cycles (approx. 30–90 days).</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>7. Your rights</h2>
-      <p>Subject to applicable law (including GDPR), you may request access, rectification, deletion, restriction, portability, and object to processing.
-      You may withdraw consent at any time and lodge a complaint with a supervisory authority. To exercise your rights: <a href="mailto:christy.yesso@gmail.com">christy.yesso@gmail.com</a>.</p>
-    </section>
-
-    <section>
-      <h2>8. Security</h2>
-      <p>We use reasonable technical and organizational measures to protect your data. No service is perfectly secure; please use a strong password and your device’s protections.</p>
-    </section>
-
-    <section>
-      <h2>9. Children</h2>
-      <p>Flokzee is <strong>for users aged 18 and over only</strong>. If we learn that a minor created an account, we will delete it and remove associated data.</p>
-    </section>
-
-    <section>
-      <h2>10. Changes</h2>
-      <p>We may update this policy. We will post the new date at the top and, when appropriate, notify you of material changes.</p>
-    </section>
-
-    <section>
-      <h2>11. Contact</h2>
-      <p><a href="mailto:christy.yesso@gmail.com">christy.yesso@gmail.com</a></p>
-    </section>
-
-    <footer>
-      <p><em>General information: this document is not legal advice. Please have it reviewed by counsel if needed.</em></p>
-    </footer>
+      <div class="controls">
+        <span class="badge" id="langBadge">FR</span>
+        <label for="langSelect" class="muted" style="font-size:14px;">Langue / Language</label>
+        <select id="langSelect" aria-label="Language selector">
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
   </div>
+</header>
+
+<main class="wrap">
+  <div class="card">
+
+    <!-- ========================= -->
+    <!-- FR -->
+    <!-- ========================= -->
+    <section class="lang" id="lang-fr">
+      <h2>CHARTE DE PROTECTION DES DONNÉES PERSONNELLES – FLOKZEE</h2>
+      <p class="subtitle">Dernière mise à jour : <strong>1er décembre 2025</strong></p>
+
+      <h3>Qui sommes-nous ?</h3>
+      <p><strong>FLOKZEE</strong></p>
+      <p>Nous pouvons être contactés :</p>
+      <ul>
+        <li>Par mail : <a href="mailto:contact@flokzee.com">contact@flokzee.com</a></li>
+      </ul>
+
+      <h3>1. OBJET DE LA CHARTE</h3>
+      <p><strong>À quoi sert cette charte ?</strong></p>
+      <p>
+        Nous exploitons l’application mobile « FLOKZEE » (« notre application »), par laquelle nous proposons un service
+        de mise en relation des personnes souhaitant faire des rencontres amicales.
+      </p>
+      <p>
+        Dans ce cadre, nous sommes amenés à collecter et traiter des données à caractère personnel.
+      </p>
+      <p>
+        La présente charte a pour objet de définir les modalités de traitement de données personnelles que nous effectuons
+        lorsque les personnes concernées (« vous ») transmettent des données par l’intermédiaire de notre application,
+        conformément à la réglementation en vigueur en matière de protection des données personnelles, et notamment le
+        Règlement (UE) n° 2016/679 relatif à la protection des personnes à l’égard du traitement des données à caractère
+        personnel (RGPD) et la loi n° 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés.
+      </p>
+      <p>
+        Nous pouvons modifier cette charte à tout moment, notamment pour nous conformer aux évolutions réglementaires.
+        Veillez à consulter cette charte régulièrement. La version à jour est celle publiée sur notre application.
+      </p>
+
+      <h3>2. RESPONSABLE DE TRAITEMENT</h3>
+      <p><strong>Qui traite vos données personnelles ?</strong></p>
+      <p><strong>FLOKZEE</strong></p>
+
+      <h3>3. OBJET DU TRAITEMENT</h3>
+      <p><strong>Comment utilisons-nous vos données ?</strong></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Finalité du traitement</th>
+            <th>Base légale du traitement</th>
+            <th>Catégories de données concernées</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gestion des demandes de création de comptes utilisateurs</td>
+            <td>Exécution de mesures précontractuelles (article 6.1.b du RGPD)</td>
+            <td>Nom, prénom, date de naissance, code postal, ville, adresse mail, photographie</td>
+          </tr>
+          <tr>
+            <td>Gestion des demandes de mise en relation des utilisateurs</td>
+            <td>Exécution de mesures contractuelles dans le cadre du contrat de mise en relation (article 6.1.b du RGPD)</td>
+            <td>Adresse mail</td>
+          </tr>
+          <tr>
+            <td>Envoi de sollicitations commerciales par mail</td>
+            <td>Votre consentement (article 6.1.a du RGPD)</td>
+            <td>Adresse mail</td>
+          </tr>
+          <tr>
+            <td>Réponse aux demandes d’exercice des droits</td>
+            <td>Respect de nos obligations légales (article 6.1.c du RGPD)</td>
+            <td>Nom, prénom, adresse mail, le cas échéant une copie d’une pièce d’identité</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="muted" style="margin-top:12px;">
+        Le caractère obligatoire ou non de la transmission des données ainsi que les conséquences en cas d’absence de réponse
+        sont précisés au moment de la collecte des données.
+      </p>
+
+      <h3>4. DESTINATAIRES DES DONNÉES</h3>
+      <p><strong>À qui transmettons-nous vos données ?</strong></p>
+      <p>Les données sont gérées par nos différents services et peuvent être transmises à :</p>
+      <ul>
+        <li>Les autres utilisateurs inscrits sur notre application pour répondre aux demandes de mise en relation</li>
+        <li>Notre hébergeur</li>
+        <li>
+          Toute autorité compétente en cas de contrôle, sur leur demande, ainsi que nos prestataires de conseil (avocats,
+          experts-comptables) pour nous conformer à nos obligations légales ou pour faire valoir nos droits.
+        </li>
+      </ul>
+
+      <h3>5. DURÉE DE CONSERVATION DES DONNÉES</h3>
+      <p><strong>Combien de temps conservons-nous vos données ?</strong></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Finalité du traitement</th>
+            <th>Durée de conservation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gestion des demandes de création de comptes utilisateurs</td>
+            <td>Nous conservons les données jusqu’à la suppression de votre compte client.</td>
+          </tr>
+          <tr>
+            <td>Envoi de sollicitations commerciales par mail</td>
+            <td>Nous conservons les données jusqu’au retrait de votre consentement.</td>
+          </tr>
+          <tr>
+            <td>Réponse aux demandes d’exercice de vos droits</td>
+            <td>
+              Nous conservons les données pendant l’année civile de la demande et pendant 5 ans après.
+              Nous supprimons les pièces d’identité éventuellement transmises au plus tard 1 an après transmission.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Au terme des durées énoncées, vos données sont supprimées.</p>
+
+      <h3>6. VOS DROITS</h3>
+      <p><strong>Quels sont vos droits concernant le traitement de vos données ?</strong></p>
+      <p>Dans le cadre du traitement de vos données personnelles, vous avez le droit de :</p>
+      <ul>
+        <li>être informé sur la collecte de vos données (droit à l’information),</li>
+        <li>vous opposer au traitement de vos données (droit d’opposition),</li>
+        <li>geler l’utilisation de vos données (droit à la limitation du traitement),</li>
+        <li>accéder à l’ensemble des informations vous concernant (droit d’accès),</li>
+        <li>demander à ce que vos données soient rectifiées, complétées, mises à jour ou supprimées (droit de rectification et droit d’effacement),</li>
+        <li>recevoir vos données pour les transmettre à une autre personne (droit à la portabilité).</li>
+      </ul>
+
+      <p>
+        Pour plus d’informations sur vos droits, consultez le site de la Commission Nationale de l’Informatique et des Libertés (CNIL) :
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">cnil.fr</a>.
+      </p>
+
+      <p>Pour exercer vos droits ou pour toute question sur le traitement de vos données, vous pouvez nous contacter :</p>
+      <ul>
+        <li>par mail : <a href="mailto:contact@flokzee.com">contact@flokzee.com</a></li>
+      </ul>
+
+      <p>Veuillez préciser clairement l’objet de votre demande.</p>
+
+      <p>
+        Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez adresser une réclamation en ligne à la CNIL à l’adresse
+        <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">cnil.fr/fr/plaintes</a>
+        ou par courrier à l’adresse suivante : CNIL, 3 Place de Fontenoy, TSA 80712, 75334 PARIS CEDEX 07.
+      </p>
+    </section>
+
+    <!-- ========================= -->
+    <!-- EN -->
+    <!-- ========================= -->
+    <section class="lang" id="lang-en">
+      <h2>PERSONAL DATA PROTECTION CHARTER – FLOKZEE</h2>
+      <p class="subtitle">Last updated: <strong>December 1, 2025</strong></p>
+
+      <h3>Who are we?</h3>
+      <p><strong>FLOKZEE</strong></p>
+      <p>You can contact us:</p>
+      <ul>
+        <li>By email: <a href="mailto:contact@flokzee.com">contact@flokzee.com</a></li>
+      </ul>
+
+      <h3>1. PURPOSE OF THIS CHARTER</h3>
+      <p><strong>What is this charter for?</strong></p>
+      <p>
+        We operate the “FLOKZEE” mobile application (“our application”), through which we provide a service that connects
+        people who wish to make friendly (non-romantic) connections.
+      </p>
+      <p>
+        In this context, we may collect and process personal data.
+      </p>
+      <p>
+        The purpose of this charter is to define how we process personal data when the data subjects (“you”) provide data
+        through our application, in accordance with applicable personal data protection regulations, in particular
+        Regulation (EU) No. 2016/679 (the “GDPR”) and French Law No. 78-17 of January 6, 1978 on information technology,
+        files and freedoms.
+      </p>
+      <p>
+        We may amend this charter at any time, in particular to comply with regulatory changes. Please review this charter
+        regularly. The applicable version is the one published within our application.
+      </p>
+
+      <h3>2. DATA CONTROLLER</h3>
+      <p><strong>Who processes your personal data?</strong></p>
+      <p><strong>FLOKZEE</strong></p>
+
+      <h3>3. PROCESSING PURPOSES</h3>
+      <p><strong>How do we use your data?</strong></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Purpose of processing</th>
+            <th>Legal basis</th>
+            <th>Categories of personal data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Managing requests to create user accounts</td>
+            <td>Performance of pre-contractual measures (Article 6(1)(b) GDPR)</td>
+            <td>Last name, first name, date of birth, postal code, city, email address, photograph</td>
+          </tr>
+          <tr>
+            <td>Managing requests to connect users</td>
+            <td>Performance of a contract relating to the connection service (Article 6(1)(b) GDPR)</td>
+            <td>Email address</td>
+          </tr>
+          <tr>
+            <td>Sending marketing communications by email</td>
+            <td>Your consent (Article 6(1)(a) GDPR)</td>
+            <td>Email address</td>
+          </tr>
+          <tr>
+            <td>Responding to requests to exercise data subject rights</td>
+            <td>Compliance with our legal obligations (Article 6(1)(c) GDPR)</td>
+            <td>Last name, first name, email address, and where applicable a copy of an identity document</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="muted" style="margin-top:12px;">
+        Whether providing data is mandatory and the consequences of not providing it are specified at the time of collection.
+      </p>
+
+      <h3>4. RECIPIENTS OF THE DATA</h3>
+      <p><strong>To whom do we disclose your data?</strong></p>
+      <p>Your data is handled by our internal teams and may be disclosed to:</p>
+      <ul>
+        <li>Other users registered on our application in order to respond to connection requests</li>
+        <li>Our hosting provider</li>
+        <li>
+          Any competent authority in the event of an audit or upon request, as well as our professional advisors (lawyers,
+          accountants) in order to comply with our legal obligations or to establish, exercise, or defend our rights
+        </li>
+      </ul>
+
+      <h3>5. DATA RETENTION PERIOD</h3>
+      <p><strong>How long do we keep your data?</strong></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Purpose of processing</th>
+            <th>Retention period</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Managing requests to create user accounts</td>
+            <td>We retain the data until your customer account is deleted.</td>
+          </tr>
+          <tr>
+            <td>Sending marketing communications by email</td>
+            <td>We retain the data until you withdraw your consent.</td>
+          </tr>
+          <tr>
+            <td>Responding to requests to exercise your rights</td>
+            <td>
+              We retain the data for the calendar year of the request and for 5 years thereafter.
+              Any identity documents provided are deleted no later than 1 year after submission.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>At the end of these periods, your data is deleted.</p>
+
+      <h3>6. YOUR RIGHTS</h3>
+      <p><strong>What are your rights regarding the processing of your data?</strong></p>
+      <p>In connection with the processing of your personal data, you have the right to:</p>
+      <ul>
+        <li>be informed about the collection of your data (right to information),</li>
+        <li>object to the processing of your data (right to object),</li>
+        <li>restrict the use of your data (right to restriction of processing),</li>
+        <li>access all information about you (right of access),</li>
+        <li>request that your data be corrected, completed, updated or deleted (right to rectification and right to erasure),</li>
+        <li>receive your data to transmit it to another party (right to data portability).</li>
+      </ul>
+
+      <p>
+        For more information about your rights, please consult the website of the French data protection authority (CNIL):
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">cnil.fr</a>.
+      </p>
+
+      <p>To exercise your rights or if you have any questions about how we process your data, you can contact us:</p>
+      <ul>
+        <li>by email: <a href="mailto:contact@flokzee.com">contact@flokzee.com</a></li>
+      </ul>
+
+      <p>Please clearly specify the purpose of your request.</p>
+
+      <p>
+        If you believe, after contacting us, that your rights are not being respected, you may submit a complaint online to the CNIL at
+        <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">cnil.fr/fr/plaintes</a>
+        or by mail at: CNIL, 3 Place de Fontenoy, TSA 80712, 75334 PARIS CEDEX 07, France.
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="wrap" style="padding:0 16px;">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+        <div>
+          <div><strong>FLOKZEE</strong> — Legal</div>
+          <div class="muted">Contact: <a href="mailto:contact@flokzee.com">contact@flokzee.com</a></div>
+        </div>
+        <div class="muted">© <span id="year"></span> Flokzee</div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  (function () {
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = String(new Date().getFullYear());
+
+    const select = document.getElementById('langSelect');
+    const badge = document.getElementById('langBadge');
+    const fr = document.getElementById('lang-fr');
+    const en = document.getElementById('lang-en');
+
+    function setLang(lang) {
+      const isEN = lang === 'en';
+      document.documentElement.lang = isEN ? 'en' : 'fr';
+      select.value = isEN ? 'en' : 'fr';
+      badge.textContent = isEN ? 'EN' : 'FR';
+      en.classList.toggle('active', isEN);
+      fr.classList.toggle('active', !isEN);
+      try { localStorage.setItem('flokzee_lang', isEN ? 'en' : 'fr'); } catch(e) {}
+    }
+
+    function getLangFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      const l = (params.get('lang') || '').toLowerCase();
+      if (l === 'en' || l === 'fr') return l;
+      return null;
+    }
+
+    const urlLang = getLangFromURL();
+    let savedLang = null;
+    try { savedLang = localStorage.getItem('flokzee_lang'); } catch(e) {}
+    const initial = urlLang || savedLang || 'fr';
+    setLang(initial);
+
+    select.addEventListener('change', () => setLang(select.value));
+  })();
+</script>
 </body>
 </html>
